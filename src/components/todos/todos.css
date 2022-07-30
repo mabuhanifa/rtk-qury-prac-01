@@ -9,6 +9,18 @@
 
 }
 
+.btn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px 50px;
+    background-color: rgb(80, 80, 255);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin-top: 25px;
+}
+
 .singlePost {
     padding: 10px;
     border: 1px solid lightgray;
@@ -16,4 +28,6 @@
     -webkit-box-shadow: 4px 11px 29px -6px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 4px 11px 29px -6px rgba(0, 0, 0, 0.46);
     box-shadow: 1px 1px 7px 0px rgb(0 0 0 / 46%);
+    position: relative;
+    min-width: min-content;
 }

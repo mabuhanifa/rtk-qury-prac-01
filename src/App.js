@@ -1,12 +1,11 @@
-import './App.css';
-import Todos from './components/todos/Todos';
-
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import Home from "./components/home/Home";
 function App() {
-  
   return (
-    <div >
-      <Todos/>
-    </div>
+    <BrowserRouter>
+      <Home/>
+    </BrowserRouter>
   );
 }
 

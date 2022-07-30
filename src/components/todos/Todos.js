@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useGetAllTodosQuery } from "../../redux/rtk query/todoQuery";
 import Spinner from "../spinner/Spinner";
 import './todos.css';
@@ -19,6 +20,7 @@ const Todos = () => {
                 <div key={todo.id} className="singlePost">
                   <h4>{todo.title}</h4>
                   <p>{todo.body}</p>
+                  <Link to={`/${todo.id}`}><button className='btn'>View</button></Link>
                 </div>
               );
             })}
