@@ -1,11 +1,20 @@
-import './addedit.css';
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./addedit.css";
+const initialState = {
+  name: "",
+  email: "",
+  contact: "",
+};
 const AddEdit = () => {
-    return (
-        <div>
-            <h2>AddEdit</h2>
-        </div>
-    );
+  const [formValue, setFormValue] = useState(initialState);
+  const { name, email, contact } = formValue;
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h2>AddEdit</h2>
+    </div>
+  );
 };
 
 export default AddEdit;
