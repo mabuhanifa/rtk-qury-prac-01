@@ -1,6 +1,10 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAddContactMutation } from "../../redux/rtk query/contactsApi";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  useAddContactMutation,
+  useContactQuery,
+  useUpdateContactMutation
+} from "../../redux/rtk query/contactsApi";
 import "./addedit.css";
 const initialState = {
   name: "",
@@ -8,7 +12,27 @@ const initialState = {
   contact: "",
 };
 const AddEdit = () => {
+  const { id } = useParams();
+  const { data, error } = useContactQuery(id);
+  const [updateContact] = useUpdateContactMutation();
+  useEffect(() => {
+    error && id && alert(error.message);
+  }, [error, id]);
+
+  useEffect(() => {
+    if (id) {
+      setEditMode(true);
+    }
+    if (data) {
+      setFormValue({ ...data });
+    } else {
+      setEditMode(false);
+      setFormValue({ ...initialState });
+    }
+  }, [id, data]);
+
   const [formValue, setFormValue] = useState(initialState);
+  const [editMode, setEditMode] = useState(false);
   const { name, email, contact } = formValue;
   const [addContact] = useAddContactMutation();
   const navigate = useNavigate();
@@ -21,9 +45,17 @@ const AddEdit = () => {
     if (!name && !email && !contact) {
       alert("Please enter a name or email");
     } else {
-      await addContact(formValue);
-      navigate("/");
-      alert("Contact added successfully");
+      if (!editMode) {
+        await addContact(formValue);
+        navigate("/");
+        alert("Contact added successfully");
+      } else {
+        await updateContact(formValue);
+
+        navigate("/");
+        setEditMode(false);
+        alert("Contact Updated successfully");
+      }
     }
   };
   return (
@@ -64,7 +96,7 @@ const AddEdit = () => {
           value={contact}
           onChange={handleInputChange}
         />
-        <input type="submit" value="Add" />
+        <input type="submit" value={editMode ? "Update" : "Add"} />
       </form>
     </div>
   );

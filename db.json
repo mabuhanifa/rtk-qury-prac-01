@@ -3,7 +3,7 @@
     {
       "name": "John",
       "email": "john@example.com",
-      "contact": "123-456-1234",
+      "contact": "1579654",
       "id": 1
     },
     {
@@ -23,6 +23,18 @@
       "email": "johnabraham@example.com",
       "contact": "123-2222-1234",
       "id": 4
+    },
+    {
+      "name": "Karim Khan",
+      "email": "karim@example.com",
+      "contact": "2548629631",
+      "id": 5
+    },
+    {
+      "name": "user",
+      "email": "magsafe@apple.com",
+      "contact": "555554142",
+      "id": 6
     }
   ]
 }
