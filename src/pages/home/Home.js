@@ -2,8 +2,8 @@ import { useContactsQuery } from '../../redux/rtk query/contactsApi';
 import './home.css';
 
 const Home = () => {
-    const contacts = useContactsQuery();
-    console.log(contacts);
+    const {data,error,isLoading,} = useContactsQuery();
+    console.log(data);
     return (
         <div>
             home
