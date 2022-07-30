@@ -17,6 +17,7 @@ export const contactsApi = createApi({
       }),
       providesTags: ["Contact"],
     }),
+    
     contact: builder.query({
       query: (id) => ({
         url: `contacts/${id}`,
