@@ -10,13 +10,12 @@ body {
     text-align: center;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
 }
 
 .ring {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     animation: ring 2s linear infinite;
 }
@@ -24,17 +23,17 @@ body {
 @keyframes ring {
     0% {
         transform: rotate(0deg);
-        box-shadow: 1px 5px 2px #e65c00;
+        box-shadow: 1px 5px 2px #aa18ee;
     }
 
     50% {
         transform: rotate(180deg);
-        box-shadow: 1px 5px 2px #18b201;
+        box-shadow: 1px 5px 2px #49f32e;
     }
 
     100% {
         transform: rotate(360deg);
-        box-shadow: 1px 5px 2px #0456c8;
+        box-shadow: 1px 5px 2px #1c77f7;
     }
 }
 
@@ -51,7 +50,7 @@ body {
 
 span {
     color: #737373;
-    font-size: 20px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 200px;
