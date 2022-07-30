@@ -7,7 +7,7 @@ import {
 import "./home.css";
 
 const Home = () => {
-  const { data, error, isLoading } = useContactsQuery();
+  const { data, error, isLoading } = useContactsQuery("contacts");
   const [deleteContact] = useDeleteContactMutation();
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this contact?")) {
