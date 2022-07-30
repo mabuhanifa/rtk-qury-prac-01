@@ -1,12 +1,11 @@
-import './spinner.css';
+import "./spinner.css";
 
 const Spinner = () => {
-    return (
+  return (
     <div className="loading">
-       <span>
-        Loading...</span>
+      <span>Loading...</span>
     </div>
-    );
+  );
 };
 
 export default Spinner;

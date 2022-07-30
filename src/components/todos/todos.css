@@ -1,0 +1,19 @@
+.main-content {
+    margin: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+
+.singlePost {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: .25rem;
+    -webkit-box-shadow: 4px 11px 29px -6px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 4px 11px 29px -6px rgba(0, 0, 0, 0.46);
+    box-shadow: 1px 1px 7px 0px rgb(0 0 0 / 46%);
+}
