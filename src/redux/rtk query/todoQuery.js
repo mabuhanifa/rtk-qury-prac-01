@@ -15,4 +15,4 @@ export const todoApi = createApi({
   }),
 });
 
-export const {useGetAllTodosQuery} = todoApi;
+export const { useGetAllTodosQuery } = todoApi;
