@@ -2,7 +2,7 @@ import './spinner.css';
 
 const Spinner = () => {
     return (
-    <div class="loading">
+    <div className="loading">
        <span>
         Loading...</span>
     </div>

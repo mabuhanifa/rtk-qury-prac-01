@@ -4,7 +4,7 @@ import Spinner from "../spinner/Spinner";
 
 const Todos = () => {
   const { data, isError, isFetching, isLoading, isSuccess } =
-    useGetAllTodosQuery();
+    useGetAllTodosQuery("/todos");
 
   return (
     <div>
