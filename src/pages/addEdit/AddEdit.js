@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAddContactMutation } from "../../redux/rtk query/contactsApi";
 import "./addedit.css";
 const initialState = {
   name: "",
@@ -9,9 +10,22 @@ const initialState = {
 const AddEdit = () => {
   const [formValue, setFormValue] = useState(initialState);
   const { name, email, contact } = formValue;
+  const [addContact] = useAddContactMutation();
   const navigate = useNavigate();
-  const handleInputChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleInputChange = (e) => {
+    let { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!name && !email && !contact) {
+      alert("Please enter a name or email");
+    } else {
+      await addContact(formValue);
+      navigate("/");
+      alert("Contact added successfully");
+    }
+  };
   return (
     <div style={{ marginTop: "100px" }}>
       <form
@@ -52,7 +66,6 @@ const AddEdit = () => {
         />
         <input type="submit" value="Add" />
       </form>
-      
     </div>
   );
 };
