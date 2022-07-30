@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .loading::after {
@@ -10,9 +11,16 @@
     width: 100px;
     height: 100px;
     border: 10px solid rgb(204, 204, 204);
-    border-bottom-color: rgb(153, 0, 255);
+    border-bottom-color: #5745ff;
     border-radius: 50%;
     animation: loader 1s linear infinite;
+}
+
+span {
+    color: #5745ff;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
 }
 
 @keyframes loader {
