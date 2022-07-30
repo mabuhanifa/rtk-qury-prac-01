@@ -1,64 +1,22 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: montserrat;
-    background: black;
-}
-
-.center {
+.loading {
+    margin-top: 50px;
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.ring {
-    position: absolute;
+.loading::after {
+    content: '';
     width: 100px;
     height: 100px;
+    border: 10px solid rgb(204, 204, 204);
+    border-bottom-color: rgb(153, 0, 255);
     border-radius: 50%;
-    animation: ring 2s linear infinite;
+    animation: loader 1s linear infinite;
 }
 
-@keyframes ring {
-    0% {
-        transform: rotate(0deg);
-        box-shadow: 1px 5px 2px #aa18ee;
-    }
-
-    50% {
-        transform: rotate(180deg);
-        box-shadow: 1px 5px 2px #49f32e;
-    }
-
-    100% {
-        transform: rotate(360deg);
-        box-shadow: 1px 5px 2px #1c77f7;
-    }
-}
-
-.ring:before {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, .3);
-}
-
-span {
-    color: #737373;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 200px;
-    animation: text 3s ease-in-out infinite;
-}
-
-@keyframes text {
-    50% {
-        color: black;
+@keyframes loader {
+    to {
+        transform: rotate(1turn);
     }
 }

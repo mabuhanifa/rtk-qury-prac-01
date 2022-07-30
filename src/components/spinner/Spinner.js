@@ -2,10 +2,8 @@ import './spinner.css';
 
 const Spinner = () => {
     return (
-        <div class="center">
-         <div class="ring"></div>
-         <span>loading...</span>
-      </div>
+    <div class="loading">
+    </div>
     );
 };
 
