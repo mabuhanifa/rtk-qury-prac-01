@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
 import Spinner from "../../components/spinner/Spinner";
-import { useContactsQuery } from "../../redux/rtk query/contactsApi";
+import {
+  useContactsQuery,
+  useDeleteContactMutation
+} from "../../redux/rtk query/contactsApi";
 import "./home.css";
 
 const Home = () => {
   const { data, error, isLoading } = useContactsQuery();
+  const [deleteContact] = useDeleteContactMutation();
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this contact?")) {
+      await deleteContact(id);
+      alert("Deleted contact successfully");
+    }
+  };
   return (
     <div style={{ marginTop: "100px" }}>
       {isLoading && <Spinner />}
@@ -36,9 +46,14 @@ const Home = () => {
                   <Link to={`/editContact/${item.id}`}>
                     <button className="btn btn-edit">Edit</button>
                   </Link>
-                  <Link to={`/editContact/${item.id}`}>
-                    <button className="btn btn-delete">Delete</button>
-                  </Link>
+
+                  <button
+                    className="btn btn-delete"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
+
                   <Link to={`/info/${item.id}`}>
                     <button className="btn btn-view">View</button>
                   </Link>
