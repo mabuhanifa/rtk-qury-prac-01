@@ -4,7 +4,7 @@ import { todoApi } from "../rtk query/todoQuery";
 
 export const store = configureStore({
   reducer: {
-    [todoApi.reducerPath]: todoApi.reducerPath,
+    [todoApi.reducerPath]: todoApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(todoApi.middleware),

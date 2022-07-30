@@ -7,10 +7,10 @@ export const todoApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllTodos: builder.query({
-      query: {
+      query: () => ({
         url: "todos",
         method: "GET",
-      },
+      }),
     }),
   }),
 });
