@@ -17,12 +17,11 @@ export const contactsApi = createApi({
         method: "POST",
         body: contact,
       }),
-
-      deleteContact: builder.mutation({
-        query: (id) => ({
-          url: `/contacts/${id}`,
-          method: "DELETE",
-        }),
+    }),
+    deleteContact: builder.mutation({
+      query: (id) => ({
+        url: `/contacts/${id}`,
+        method: "DELETE",
       }),
     }),
   }),
