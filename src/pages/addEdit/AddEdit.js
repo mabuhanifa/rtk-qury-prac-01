@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
+
 import { useNavigate, useParams } from "react-router-dom";
+
 import {
   useAddContactMutation,
   useContactQuery,
   useUpdateContactMutation
 } from "../../redux/rtk query/contactsApi";
+
 import "./addedit.css";
+
 const initialState = {
   name: "",
   email: "",
   contact: "",
 };
+
 const AddEdit = () => {
   const { id } = useParams();
   const { data, error } = useContactQuery(id);
